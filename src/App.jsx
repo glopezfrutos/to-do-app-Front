@@ -1,6 +1,7 @@
 import './App.css'
 import ListOfToDo from './components/ListOfToDo'
 import StoreProvider from './components/StoreProvider'
+import Form from './components/Form'
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     
       <StoreProvider>
         <h1>Hello from my app</h1>
-        <ListOfToDo></ListOfToDo>
+        <Form />
+        <ListOfToDo />
       </StoreProvider>
     
   )
