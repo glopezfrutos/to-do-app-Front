@@ -24,12 +24,24 @@ const ListOfToDo = () => {
 
     }, [])
 
-    const onCheckbox = (event, note) => {
+    const onCheckbox = async (event, note) => {
         const checked = event.currentTarget.checked;
+
+        let noteWithCheckboxInformation = {...note,
+        done: checked}
+
+        let noteUpdatedPromise = await fetch(`http://localhost:8081/api/update/note`, {
+            method: 'PUT',
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(noteWithCheckboxInformation)
+          })
+
+        let noteUpdated = await noteUpdatedPromise.json()
         dispatch({
             type: 'update-note',
-            payload: {...note,
-            done: checked}
+            payload: noteUpdated
         })
     }
 
