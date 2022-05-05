@@ -8,14 +8,7 @@ const initialState = {
         message: '',
         done: false
     },
-    listOfNotes: [
-        {
-            id: '0',
-            title: "default title",
-            message: 'default message',
-            done: true
-        }
-    ]
+    listOfNotes: []
 }
 
 const Store = createContext(initialState)
