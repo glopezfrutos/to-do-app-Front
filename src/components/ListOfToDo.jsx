@@ -14,7 +14,6 @@ const ListOfToDo = () => {
     useEffect(()=> {
         let listOfNotes = fetchAllNotes().then(
             notes => {
-                console.log(notes)
                 let action = {
                     type: 'get-notes',
                     payload: notes
